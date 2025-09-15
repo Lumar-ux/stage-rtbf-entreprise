@@ -34,7 +34,11 @@ Des pages spécifiques dédiées à l’emploi et aux contacts complètent ce di
 - **Base de données** : MySQL/MariaDB
 - **Infrastructure** : Kubernetes (Lens)
 
-### Structure simplifiée du monorepo (frontend)
+# Architecture du projet
+Ce document décrit l’architecture globale du projet OAOS (Frontend) développé à la RTBF.
+[![](https://mermaid.ink/img/pako:eNqFVdty2jAQ_RWNnpIpGLAxFz90JoG-ddI25KkhD8JeHAUjeSQ5hWbyQfmO_lhXvnAxhvgFJJ9zdrVnV36joYyABjRWLH0mD9O5IPjcPM4pS9OEh8xwKXRnTp9Iu_2V3BYv8o0Smu9PcD_hi5P9Ke6nLFyxGJwXLQW50qHiqdHkbtO5g41pETChc12jfUOa0aEUSx47C6YrMks4LjR5mBWMgqOzRZG-zazYss9tkXEPtaSAtuYG9ukdAFwEgDAKUsV1M8Q70GiDCx1yNdmmCrS-boL3jxTPEUBEJyeoghxI9spjsKL0qHSTpuReZgZULXoFXdiqZwu0r9MMCHNbYtCo9tP-XtaLEF76dkYQLMJsk1zxgfHkDxcRee2fEVwiXKD7Tmnxi27GxTZPJV8gNGUHTPgiAWyey2U8cBxLNqeH0qyqp22MhG3x4I7RG3L1Pf9PFAu5ADKb3deT3zFtx4QJR4vbDQLFm8sJ7rvjIIBb9mPl9HH46q01N5TrFE8oTvyoQOHej2ZAdK5FKoB1NDM8OSfwmYUVrm7hJ74dDGLdOZdV9Tl2rhZ3h2p06RzYTriQpr2UmYguAe1sM2V4mNSvij3GR8zjo-M4Osli_fR0Auzv1Fg5iU0h_Z1eI6qpgPYO3mtMirvZlivjOJhT0DwWZLbVBtbkC5kZqbYLKVfHnV7S3LwNLW-SV1GTH-qVJci7BxYa8isDtW1kenmLKshvF2VY_O9DB6S8QVokb6tGoi1uxAxDv0DZmwSHccVFfDRMtIVfKx7RwKgMWnQNas3skr5ZCH44nmENcxoQq6VWtofekZMy8VvKdUVTMoufabBkicZVlmJYmHKGZdxDMBioCXaEoUHP87u5CA3e6IYGbc_zne5gPB66va476A1HLbqlgTscOP1h3_dHuOmP-v57i_7Nw_acwcjzB-PhaDT23FG3673_B7YnI5c?type=png)](https://mermaid.live/edit#pako:eNqFVdty2jAQ_RWNnpIpGLAxFz90JoG-ddI25KkhD8JeHAUjeSQ5hWbyQfmO_lhXvnAxhvgFJJ9zdrVnV36joYyABjRWLH0mD9O5IPjcPM4pS9OEh8xwKXRnTp9Iu_2V3BYv8o0Smu9PcD_hi5P9Ke6nLFyxGJwXLQW50qHiqdHkbtO5g41pETChc12jfUOa0aEUSx47C6YrMks4LjR5mBWMgqOzRZG-zazYss9tkXEPtaSAtuYG9ukdAFwEgDAKUsV1M8Q70GiDCx1yNdmmCrS-boL3jxTPEUBEJyeoghxI9spjsKL0qHSTpuReZgZULXoFXdiqZwu0r9MMCHNbYtCo9tP-XtaLEF76dkYQLMJsk1zxgfHkDxcRee2fEVwiXKD7Tmnxi27GxTZPJV8gNGUHTPgiAWyey2U8cBxLNqeH0qyqp22MhG3x4I7RG3L1Pf9PFAu5ADKb3deT3zFtx4QJR4vbDQLFm8sJ7rvjIIBb9mPl9HH46q01N5TrFE8oTvyoQOHej2ZAdK5FKoB1NDM8OSfwmYUVrm7hJ74dDGLdOZdV9Tl2rhZ3h2p06RzYTriQpr2UmYguAe1sM2V4mNSvij3GR8zjo-M4Osli_fR0Auzv1Fg5iU0h_Z1eI6qpgPYO3mtMirvZlivjOJhT0DwWZLbVBtbkC5kZqbYLKVfHnV7S3LwNLW-SV1GTH-qVJci7BxYa8isDtW1kenmLKshvF2VY_O9DB6S8QVokb6tGoi1uxAxDv0DZmwSHccVFfDRMtIVfKx7RwKgMWnQNas3skr5ZCH44nmENcxoQq6VWtofekZMy8VvKdUVTMoufabBkicZVlmJYmHKGZdxDMBioCXaEoUHP87u5CA3e6IYGbc_zne5gPB66va476A1HLbqlgTscOP1h3_dHuOmP-v57i_7Nw_acwcjzB-PhaDT23FG3673_B7YnI5c)
+
+### Structure du monorepo (frontend)
 ```text
 applications/
 ├─ apps/
@@ -75,13 +79,13 @@ applications/
 ```
 
 ## 🚀 Mon rôle et contributions
-- Développement de composants UI réutilisables (React/Next.js + Tailwind CSS).
-- Intégration et typage automatique d’APIs REST/GraphQL via Orval.
-- Optimisation des performances front-end (lazy loading, réduction bundle, cache).
-- Gestion des métadonnées dans le backend Laravel.
-- Intégration de trackers de fréquentation (Gemius / CIM Internet).
-- Collaboration avec les équipes backend, frontend et UX designers.
-- Participation aux revues de code, CI/CD et déploiements Kubernetes.
+- Développement de **composants UI réutilisables** (React/Next.js + Tailwind CSS + intégration API Orval).
+- **Optimisation des performances front-end** (lazy loading, réduction bundle, cache, réduction de la charge JS).
+- Gestion des **métadonnées dans le backend Laravel**, avec utilisation de Postman pour la configuration et les tests sur différents environnements (local, UAT, production).
+- Intégration de **trackers de fréquentation** (Gemius / CIM Internet).
+- **Collaboration** avec les équipes backend, frontend et UX designers.
+- Participation aux **pipelines CI/CD (GitLab)** pour automatiser les tests et les déploiements.
+- **Agile (Scrum)** : participation aux daily meetings, revues de code et planifications.
 
 ## 📂 Ce dépôt
 Ce repository **ne contient pas le code source**, mais :
