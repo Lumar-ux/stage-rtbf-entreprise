@@ -9,8 +9,6 @@
 Plateforme web destinée à diffuser des contenus et services numériques de la RTBF.  
 Objectif : offrir une expérience unifiée, rapide et responsive sur plusieurs “apps” (grand public et entreprise).
 
----
-
 ## 🛠️ Technologies & Architecture
 
 ### Frontend
@@ -29,22 +27,44 @@ Objectif : offrir une expérience unifiée, rapide et responsive sur plusieurs �
 
 ### Structure simplifiée du monorepo (frontend)
 
-apps/
-├─ one-site/ (app Next.js principale)
-│ ├─ app/ (routes App Router)
-│ ├─ components/ (UI, tracking, widgets…)
-│ ├─ api/ (clients Orval)
-│ ├─ styles/, utils/, scripts/…
-│ └─ public/
-├─ entreprise/ (app Next.js secondaire)
-└─ entreprise-e2e/ (tests e2e Cypress)
-
-libs/
-├─ api/ (config Orval, clients OpenAPI)
-├─ datalayer/
-└─ ui/ (librairie de composants partagés : assets, fonts, styles…)
-
----
+```text
+applications/
+├─ apps/
+│  ├─ one-site/
+│  │  ├─ app/                     # App Router (routage Next 15)
+│  │  │  ├─ layout.tsx            # Layout racine SSR: injecte <ClientLayout>…</ClientLayout>
+│  │  │  └─ client-layout.tsx     # Layout client: auth, consent, tracking, providers
+│  │  ├─ public/                  # assets publics
+│  │  ├─ pages/                   # Pages Router
+│  │  ├─ scripts/                 # scripts client spécifiques one-site
+│  │  ├─ styles/                  # Tailwind v4, polices
+│  │  ├─ next.config.js
+│  │  └─ project.json             # cible Nx (build, dev, etc.)
+│  ├─ entreprise/
+|  |  ├─ app/
+│  |  |  ├─ layout.tsx
+│  |  |  ├─ client-layout.tsx
+│  |  |  ├─ not-found.tsx
+│  |  |  ├─ article/
+│  |  |  │  └─ page.tsx
+│  |  |  └─ [[...slugs]]/
+│  |  |     └─ page.tsx
+|  |  ├─ components/
+│  │  ├─ styles/
+|  |  ├─ public/
+|  |  ├─ utils/
+|  |  ├─ next.config.js
+|  |  └─ project.json
+│  ├─ one-site-e2e/               # tests E2E (Cypress)
+│  └─ entreprise-e2e/
+├─ libs/
+│  ├─ ui/                         # Design System + Storybook
+│  ├─ api/                        # Clients Orval + hooks React Query + types
+│  ├─ core/                       # Partagés (scripts, utils)
+│  └─ datalayer/                  # Tracking (schemas, helpers)
+├─ package.json                   # scripts Nx/Next/storybook, orval, etc.
+└─ tsconfig.base.json             # aliases TypeScript du monorepo
+```
 
 ## 🚀 Mon rôle et contributions
 - Développement de composants UI réutilisables (React/Next.js + Tailwind CSS).
@@ -55,8 +75,6 @@ libs/
 - Collaboration avec les équipes backend, frontend et UX designers.
 - Participation aux revues de code, CI/CD et déploiements Kubernetes.
 
----
-
 ## 📂 Ce dépôt
 Ce repository **ne contient pas le code source**, mais :
 - La **documentation technique** (README, schémas d’architecture…).
@@ -64,20 +82,11 @@ Ce repository **ne contient pas le code source**, mais :
 - Des **captures d’écran** ou **diagrammes** d’architecture (voir dossier `/images`).
 - Un **rétro-planning** ou un journal de bord de mes contributions.
 
----
-
-## 🖼️ Exemple d’architecture
-![Architecture Frontend](images/architecture-frontend.png)
-
----
-
 ## 🔗 Ressources
 - [Next.js](https://nextjs.org/)
 - [NX Monorepo](https://nx.dev/)
 - [Laravel](https://laravel.com/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [Orval](https://orval.dev/)
-
----
 
 > _Auteur : Lucas Maroy — Stage RTBF 2025_
