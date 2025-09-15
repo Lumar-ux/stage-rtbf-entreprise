@@ -3,11 +3,20 @@
 > **⚠️ Ce dépôt ne contient pas le code source original pour des raisons de confidentialité.**  
 > Il documente l’architecture, les technologies et mes contributions au projet réalisé lors de mon stage de 6 mois à la RTBF.
 
----
-
 ## 📝 Contexte du projet
-Plateforme web destinée à diffuser des contenus et services numériques de la RTBF.  
-Objectif : offrir une expérience unifiée, rapide et responsive sur plusieurs “apps” (grand public et entreprise).
+Dans le cadre de mon stage à la RTBF, j’ai contribué à la mise en ligne de la nouvelle version du site Entreprise (« RTBF et vous »), destinée à remplacer une version devenue obsolète.
+L’objectif était double :
+- **Moderniser** l’interface pour l’aligner sur l’identité actuelle de la RTBF.
+- **Unifier** les technologies avec celles du site principal (RTBF Actus) en utilisant les mêmes outils et standards.
+Le site **RTBF et vous** est une plateforme qui va au-delà des simples programmes. C’est un portail conçu pour créer un lien direct et transparent entre le groupe audiovisuel et ses différents publics.
+
+Il est structuré en plusieurs sections :
+
+- **Public** : découverte des coulisses, visites des studios, participation à des émissions, médiation pour questions et réclamations.
+- **Éducation** : espace pour enseignants et élèves, consultation des archives, accueil d’intervenants dans les classes, offres de stages.
+- **Pros** : informations pour les entreprises et professionnels, partenariats, sponsoring, actualités, espace presse pour les journalistes.
+- **Qui sommes-nous ?** : présentation des engagements, de l’histoire, des lieux, de la gouvernance et des publications de la RTBF.
+Des pages spécifiques dédiées à l’emploi et aux contacts complètent ce dispositif, faisant de ce site une vitrine du rôle sociétal, éducatif et professionnel de la RTBF, en plus de sa mission de service public.
 
 ## 🛠️ Technologies & Architecture
 
@@ -26,7 +35,6 @@ Objectif : offrir une expérience unifiée, rapide et responsive sur plusieurs �
 - **Infrastructure** : Kubernetes (Lens)
 
 ### Structure simplifiée du monorepo (frontend)
-
 ```text
 applications/
 ├─ apps/
