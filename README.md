@@ -3,6 +3,10 @@
 > **⚠️ This repository does not contain the original source code for confidentiality reasons.**
 > It documents the architecture, technologies, and my contributions to the project carried out during my 6-month internship at RTBF.
 
+## 🌐 Live Website
+
+👉 [Visit the website](https://www.rtbf.be/et-vous)
+
 ## 📝 Project Context
 
 As part of my internship at RTBF, I contributed to the launch of the new version of the **Entreprise** website (“RTBF et vous”), replacing an outdated version.
