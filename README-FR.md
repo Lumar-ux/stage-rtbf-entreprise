@@ -8,7 +8,7 @@
 👉 [Visiter le site](https://www.rtbf.be/et-vous)
 
 ## 📝 Contexte du projet
-Dans le cadre de mon stage à la RTBF, j’ai contribué à la mise en ligne de la nouvelle version du site Entreprise (« RTBF et vous »), destinée à remplacer une version devenue obsolète.
+Dans le cadre de mon **stage payée à la RTBF**, j’ai contribué à la mise en ligne de la nouvelle version du site Entreprise (« RTBF et vous »), destinée à remplacer une version devenue obsolète.
 L’objectif était double :
 - **Moderniser** l’interface pour l’aligner sur l’identité actuelle de la RTBF.
 - **Unifier** les technologies avec celles du site principal (RTBF Actus) en utilisant les mêmes outils et standards.
