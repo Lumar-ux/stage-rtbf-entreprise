@@ -9,7 +9,7 @@
 
 ## 📝 Project Context
 
-As part of my paid internship at RTBF, I contributed to the launch of the new version of the **Entreprise** website (“RTBF et vous”), replacing an outdated version.
+As part of my **paid internship at RTBF**, I contributed to the launch of the new version of the **Entreprise** website (“RTBF et vous”), replacing an outdated version.
 The goal was twofold:
 
 * **Modernize** the interface to align it with RTBF’s current brand identity.
